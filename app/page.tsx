@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import "./globals.css";
 import Container from "./Container";
+import { reverse } from "dns";
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
           Framer Experiments
         </p>
-        <div className="fixed bottom-0 md:flex h-24 lg:h-24 w-full md:items-end items-center justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
+        <div className="fixed bottom-0 md:flex h-24 lg:h-24 w-full align-center items-center justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
           <a
             className="pointer-events-none flex justify-center margin-auto place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
             href="https://github.com/moraesc"
@@ -121,6 +122,27 @@ export default function Home() {
             className="box"
             whileHover={{ scale: 1.1 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          />
+        </Container>
+
+        <Container label="Watch">
+          <motion.div
+            className="line"
+            style={{ x: 0 }}
+            animate={{ x: [100, -100] }}
+            transition={{
+              repeat: Infinity,
+              repeatType: "reverse",
+              duration: 2,
+            }}
+          />
+        </Container>
+
+        <Container label="Hover">
+          <motion.div
+            className="line"
+            initial={{ x: 0 }}
+            whileHover={{ width: 100 }}
           />
         </Container>
       </div>
