@@ -36,4 +36,5 @@ body {
   width: 25px;
   height: 5px;
   background: white;
+  cursor: pointer;
 }
